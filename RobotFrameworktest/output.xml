@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.7.0 on win32)" generated="20230621 00:28:36.339" rpa="true">
+<suite id="s1" name="RobotFrameworktest" source="C:\Users\Tarun Gupta\Desktop\Robot Framework Test\RobotFrameworktest">
+<suite id="s1-s1" name="Testscrips" source="C:\Users\Tarun Gupta\Desktop\Robot Framework Test\RobotFrameworktest\Testscrips">
+<suite id="s1-s1-s1" name="TestOrder" source="C:\Users\Tarun Gupta\Desktop\Robot Framework Test\RobotFrameworktest\Testscrips\TestOrder.robot">
+<test id="s1-s1-s1-t1" name="Scenario 2: Add and Complete the order">
+<kw name="Open Browser" library="Browser">
+<tags>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+</tags>
+<doc>Opens a new browser instance. Use this keyword for quick experiments or debugging sessions.
+Use `New Page` directly instead of `Open Browser` for production and automated execution.
+See `Browser, Context and Page` for more information about Browser and related concepts.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>browser=chromium</arg>
+</arguments>
+<msg timestamp="20230621 00:28:37.099" level="WARN">Open Browser is for quick experimentation and debugging only. Use New Page for production.</msg>
+<msg timestamp="20230621 00:28:37.099" level="INFO">{"browser": "chromium", "headless": false, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 0.0}</msg>
+<msg timestamp="20230621 00:28:37.565" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":0}</msg>
+<msg timestamp="20230621 00:28:37.566" level="INFO">{"acceptDownloads": false, "ignoreHTTPSErrors": false, "bypassCSP": false, "deviceScaleFactor": 1.0, "isMobile": false, "hasTouch": false, "javaScriptEnabled": true, "offline": false, "hideRfBrowser": false}</msg>
+<msg timestamp="20230621 00:28:37.593" level="INFO">Successfully created context with options: {"acceptDownloads":false,"ignoreHTTPSErrors":false,"bypassCSP":false,"deviceScaleFactor":1,"isMobile":false,"hasTouch":false,"javaScriptEnabled":true,"offline":false,"hideRfBrowser":false}</msg>
+<msg timestamp="20230621 00:28:41.094" level="INFO">Successfully initialized new page object and opened url: https://www.saucedemo.com</msg>
+<status status="PASS" starttime="20230621 00:28:37.099" endtime="20230621 00:28:41.095"></status>
+</kw>
+<kw name="Fill Text" library="Browser">
+<tags>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+</tags>
+<doc>Clears and fills the given ``text`` into the text field found by ``selector``.</doc>
+<arguments>
+<arg>//*[@id="user-name"]</arg>
+<arg>${UserName}</arg>
+</arguments>
+<msg timestamp="20230621 00:28:41.096" level="INFO">Fills the text 'standard_user' in the given field.</msg>
+<status status="PASS" starttime="20230621 00:28:41.095" endtime="20230621 00:28:41.154"></status>
+</kw>
+<kw name="Fill Text" library="Browser">
+<tags>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+</tags>
+<doc>Clears and fills the given ``text`` into the text field found by ``selector``.</doc>
+<arguments>
+<arg>//*[@id="password"]</arg>
+<arg>${PassWord}</arg>
+</arguments>
+<msg timestamp="20230621 00:28:41.155" level="INFO">Fills the text 'secret_sauce' in the given field.</msg>
+<status status="PASS" starttime="20230621 00:28:41.154" endtime="20230621 00:28:41.180"></status>
+</kw>
+<kw name="Click" library="Browser">
+<tags>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+</tags>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<arguments>
+<arg>//*[@id="login-button"]</arg>
+</arguments>
+<status status="PASS" starttime="20230621 00:28:41.180" endtime="20230621 00:28:41.322"></status>
+</kw>
+<kw name="Click" library="Browser">
+<tags>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+</tags>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<arguments>
+<arg>(//*[text()='Add to cart'])[1]</arg>
+</arguments>
+<status status="PASS" starttime="20230621 00:28:41.323" endtime="20230621 00:28:41.373"></status>
+</kw>
+<kw name="Click" library="Browser">
+<tags>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+</tags>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<arguments>
+<arg>(//*[text()='Add to cart'])[2]</arg>
+</arguments>
+<status status="PASS" starttime="20230621 00:28:41.374" endtime="20230621 00:28:41.427"></status>
+</kw>
+<kw name="Get Text" library="Browser">
+<tags>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+</tags>
+<doc>Returns text attribute of the element found by ``selector``.
+See the `Finding elements` section for details about the selectors.</doc>
+<arguments>
+<arg>//*[@class="shopping_cart_badge"]</arg>
+</arguments>
+<assign>
+<var>${CartItem}</var>
+</assign>
+<msg timestamp="20230621 00:28:41.461" level="INFO">${CartItem} = 2</msg>
+<status status="PASS" starttime="20230621 00:28:41.427" endtime="20230621 00:28:41.461"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${CartItem}</arg>
+<arg>2</arg>
+</arguments>
+<status status="PASS" starttime="20230621 00:28:41.461" endtime="20230621 00:28:41.462"></status>
+</kw>
+<kw name="Click" library="Browser">
+<tags>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+</tags>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<arguments>
+<arg>//*[@id="shopping_cart_container"]/a</arg>
+</arguments>
+<status status="PASS" starttime="20230621 00:28:41.462" endtime="20230621 00:28:41.565"></status>
+</kw>
+<kw name="Get Element Count" library="Browser">
+<tags>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+</tags>
+<doc>Returns the count of elements found with ``selector``.</doc>
+<arguments>
+<arg>//*[@class="cart_item"]</arg>
+</arguments>
+<assign>
+<var>${CartItemviewCount}</var>
+</assign>
+<msg timestamp="20230621 00:28:41.580" level="INFO">${CartItemviewCount} = 2</msg>
+<status status="PASS" starttime="20230621 00:28:41.565" endtime="20230621 00:28:41.581"></status>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${CartItemviewCount}</arg>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20230621 00:28:41.581" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" starttime="20230621 00:28:41.581" endtime="20230621 00:28:41.581"></status>
+</kw>
+<kw name="Click" library="Browser">
+<tags>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+</tags>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<arguments>
+<arg>//*[@id="checkout"]</arg>
+</arguments>
+<status status="PASS" starttime="20230621 00:28:41.582" endtime="20230621 00:28:41.633"></status>
+</kw>
+<kw name="Fill Text" library="Browser">
+<tags>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+</tags>
+<doc>Clears and fills the given ``text`` into the text field found by ``selector``.</doc>
+<arguments>
+<arg>//*[@id="first-name"]</arg>
+<arg>${FirstName}</arg>
+</arguments>
+<msg timestamp="20230621 00:28:41.633" level="INFO">Fills the text 'Test' in the given field.</msg>
+<status status="PASS" starttime="20230621 00:28:41.633" endtime="20230621 00:28:41.661"></status>
+</kw>
+<kw name="Fill Text" library="Browser">
+<tags>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+</tags>
+<doc>Clears and fills the given ``text`` into the text field found by ``selector``.</doc>
+<arguments>
+<arg>//*[@id="last-name"]</arg>
+<arg>${LatsName}</arg>
+</arguments>
+<msg timestamp="20230621 00:28:41.662" level="INFO">Fills the text 'Test1' in the given field.</msg>
+<status status="PASS" starttime="20230621 00:28:41.661" endtime="20230621 00:28:41.680"></status>
+</kw>
+<kw name="Fill Text" library="Browser">
+<tags>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+</tags>
+<doc>Clears and fills the given ``text`` into the text field found by ``selector``.</doc>
+<arguments>
+<arg>//*[@id="postal-code"]</arg>
+<arg>${Zip}</arg>
+</arguments>
+<msg timestamp="20230621 00:28:41.681" level="INFO">Fills the text '12345' in the given field.</msg>
+<status status="PASS" starttime="20230621 00:28:41.681" endtime="20230621 00:28:41.700"></status>
+</kw>
+<kw name="Click" library="Browser">
+<tags>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+</tags>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<arguments>
+<arg>//*[@id="continue"]</arg>
+</arguments>
+<status status="PASS" starttime="20230621 00:28:41.701" endtime="20230621 00:28:41.766"></status>
+</kw>
+<kw name="Get Text" library="Browser">
+<tags>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+</tags>
+<doc>Returns text attribute of the element found by ``selector``.
+See the `Finding elements` section for details about the selectors.</doc>
+<arguments>
+<arg>(//*[@class="cart_quantity"])[1]</arg>
+</arguments>
+<assign>
+<var>${Cartqty1}</var>
+</assign>
+<msg timestamp="20230621 00:28:41.787" level="INFO">${Cartqty1} = 1</msg>
+<status status="PASS" starttime="20230621 00:28:41.767" endtime="20230621 00:28:41.787"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${Cartqty1}</arg>
+<arg>1</arg>
+</arguments>
+<status status="PASS" starttime="20230621 00:28:41.788" endtime="20230621 00:28:41.788"></status>
+</kw>
+<kw name="Get Text" library="Browser">
+<tags>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+</tags>
+<doc>Returns text attribute of the element found by ``selector``.
+See the `Finding elements` section for details about the selectors.</doc>
+<arguments>
+<arg>(//*[@class="cart_quantity"])[2]</arg>
+</arguments>
+<assign>
+<var>${Cartqty2}</var>
+</assign>
+<msg timestamp="20230621 00:28:41.805" level="INFO">${Cartqty2} = 1</msg>
+<status status="PASS" starttime="20230621 00:28:41.788" endtime="20230621 00:28:41.805"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${Cartqty2}</arg>
+<arg>1</arg>
+</arguments>
+<status status="PASS" starttime="20230621 00:28:41.805" endtime="20230621 00:28:41.806"></status>
+</kw>
+<kw name="Get Text" library="Browser">
+<tags>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+</tags>
+<doc>Returns text attribute of the element found by ``selector``.
+See the `Finding elements` section for details about the selectors.</doc>
+<arguments>
+<arg>//*[@class="summary_info_label summary_total_label"]</arg>
+</arguments>
+<assign>
+<var>${total}</var>
+</assign>
+<msg timestamp="20230621 00:28:41.821" level="INFO">${total} = Total: $49.66</msg>
+<status status="PASS" starttime="20230621 00:28:41.807" endtime="20230621 00:28:41.821"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${total}</arg>
+<arg>Total: $49.66</arg>
+</arguments>
+<status status="PASS" starttime="20230621 00:28:41.822" endtime="20230621 00:28:41.822"></status>
+</kw>
+<kw name="Take Screenshot" library="Browser">
+<tags>
+<tag>PageContent</tag>
+</tags>
+<doc>Takes a screenshot of the current window and saves it to ``path``. Saves it as a png.</doc>
+<msg timestamp="20230621 00:28:41.936" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-3.png"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230621 00:28:41.822" endtime="20230621 00:28:41.936"></status>
+</kw>
+<kw name="Click" library="Browser">
+<tags>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+</tags>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<arguments>
+<arg>//*[@id="finish"]</arg>
+</arguments>
+<status status="PASS" starttime="20230621 00:28:41.937" endtime="20230621 00:28:41.996"></status>
+</kw>
+<kw name="Take Screenshot" library="Browser">
+<tags>
+<tag>PageContent</tag>
+</tags>
+<doc>Takes a screenshot of the current window and saves it to ``path``. Saves it as a png.</doc>
+<msg timestamp="20230621 00:28:42.125" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-4.png"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230621 00:28:41.996" endtime="20230621 00:28:42.125"></status>
+</kw>
+<kw name="Get Text" library="Browser">
+<tags>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+</tags>
+<doc>Returns text attribute of the element found by ``selector``.
+See the `Finding elements` section for details about the selectors.</doc>
+<arguments>
+<arg>//*[@id="checkout_complete_container"]/h2</arg>
+</arguments>
+<assign>
+<var>${Confirmation Message}</var>
+</assign>
+<msg timestamp="20230621 00:28:42.147" level="INFO">${Confirmation Message} = Thank you for your order!</msg>
+<status status="PASS" starttime="20230621 00:28:42.125" endtime="20230621 00:28:42.147"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${Confirmation Message}</arg>
+<arg>Thank you for your order!</arg>
+</arguments>
+<status status="PASS" starttime="20230621 00:28:42.148" endtime="20230621 00:28:42.148"></status>
+</kw>
+<kw name="Close Browser" library="Browser">
+<tags>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+</tags>
+<doc>Closes the current browser. Activated browser is set to first active browser.
+Closes all context and pages belonging to this browser.
+See `Browser, Context and Page` for more information about Browser and related concepts.</doc>
+<msg timestamp="20230621 00:28:42.346" level="INFO">Closed browser</msg>
+<status status="PASS" starttime="20230621 00:28:42.148" endtime="20230621 00:28:42.347"></status>
+</kw>
+<status status="PASS" starttime="20230621 00:28:37.093" endtime="20230621 00:28:42.347" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20230621 00:28:36.393" endtime="20230621 00:28:42.351"></status>
+</suite>
+<status status="PASS" starttime="20230621 00:28:36.390" endtime="20230621 00:28:42.359"></status>
+</suite>
+<status status="PASS" starttime="20230621 00:28:36.369" endtime="20230621 00:28:42.361"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tasks</stat>
+<stat pass="1" fail="0">All Tasks</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" id="s1" name="RobotFrameworktest">RobotFrameworktest</stat>
+<stat pass="1" fail="0" id="s1-s1" name="Testscrips">RobotFrameworktest.Testscrips</stat>
+<stat pass="1" fail="0" id="s1-s1-s1" name="TestOrder">RobotFrameworktest.Testscrips.TestOrder</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20230621 00:28:37.099" level="WARN">Open Browser is for quick experimentation and debugging only. Use New Page for production.</msg>
+</errors>
+</robot>
