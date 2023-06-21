@@ -7,7 +7,14 @@ To use RobotFrameworkdstny, you need to have Python and Robot Framework installe
 Clone the repository:
 git clone https://github.com/shivanigoel/RobotFrameworkdstny.git
 
-This clone repo have all the Jars that needed to run this project in eclipse.
+Version used for this project
+
+robotframework                  3.2.2
+robotframework-assertion-engine 1.0.0
+robotframework-browser          3.1.1
+robotframework-pythonlibcore    4.1.2
+RED                             0.9.5
+Eclipse IDE Version             2018-12 (4.10.0)
 
 
 **Running in Eclipse using RED (Robot Editor) Plugin**
